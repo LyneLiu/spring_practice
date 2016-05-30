@@ -20,7 +20,10 @@ import static org.junit.Assert.assertTrue;
 @ContextConfiguration(classes = MagicConfig.class)
 public class MagiExistsTest {
 
-
+    /**
+     * 更正：当Spring 容器中配置了相同类型的 Bean，对该类型的成员变量进行自动注入时，Spring 容器将无法确定到底要用哪一个 Bean，就会发生异常。
+     * Spring 允许我们通过 @Qualifier 注释指定注入 Bean 的名称，用来消除歧义！
+     */
     @Autowired
     @Qualifier("applicationContext")
     ApplicationContext applicationContext;
