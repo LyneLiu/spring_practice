@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="blankDisc" class="com.spring_practice.config.stereo_xmlconfig.properties.BlankDisc"
+          p:title="This is a p-namespace blank disc."
+          p:artist="No Artist">
+        <property name="tracks">
+            <list>
+                <value>lalalala</value>
+                <value>singsingsing</value>
+                <value>blablabla</value>
+                <value>goodgoodgood</value>
+                <value>lalalala</value>
+                <value>hahahahaha</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="cdPlayer" class="com.spring_practice.config.stereo_xmlconfig.properties.CDPlayer"
+        p:cd-ref="blankDisc"/>
+
+</beans>

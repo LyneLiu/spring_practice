@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="blankDisc" class="com.spring_practice.config.stereo_xmlconfig.BlankDisc"
+        c:_0="This is a blank disc."
+        c:_1="None"/>
+
+    <bean id="cdPlayer" class="com.spring_practice.config.stereo_xmlconfig.CDPlayer"
+          c:_0-ref="blankDisc"/>
+</beans>
