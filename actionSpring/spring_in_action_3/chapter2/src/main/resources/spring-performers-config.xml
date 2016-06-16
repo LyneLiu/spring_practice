@@ -5,6 +5,28 @@
             http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Bean declarations go here -->
-    <bean id="duke" class="com.springinaction.springidol.Juggle"/>
+    <!--使用默认的构造器-->
+    <bean id="duke" class="com.springinaction.springidol.xml_config.Juggler"/>
+
+    <!--通过构造器注入-->
+    <bean id="dukeConstructor" class="com.springinaction.springidol.xml_config.Juggler">
+        <constructor-arg value="15"/>
+    </bean>
+
+    <!--通过构造器引入对象-->
+    <bean id="poem" class="com.springinaction.springidol.xml_config.Sonnet29" />
+
+    <bean id="defaultPoemJuggler" class="com.springinaction.springidol.xml_config.PoeticJuggler">
+        <constructor-arg ref="poem"/>
+    </bean>
+
+    <bean id="poemJuggler" class="com.springinaction.springidol.xml_config.PoeticJuggler">
+        <constructor-arg index="0" value="12"/>
+        <constructor-arg index="1" ref="poem"/>
+    </bean>
+
+    <!--通过工厂方法创建Bean：factory-method-->
+    <bean id="theStage" class="com.springinaction.springidol.static_factory.Stage"
+        factory-method="getInstance" />
 
 </beans>
